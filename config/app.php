@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'jwt' => [
+        'secret' => env('JWT_SECRET'),
+        'ttl' => env('JWT_TTL', 30),
+        'refresh_ttl' => env('JWT_REFRESH_TTL', 2592000),
+        'aud' => env('JWT_AUD', 'api'),
+        'iss' => env('JWT_ISS', 'https://example.com'),
+        'jti' => env('JWT_JTI', 'uuid'),
+        'nbf' => env('JWT_NBF', 0),
+        'exp' => env('JWT_EXP', 0),
+        'leeway' => env('JWT_LEEWAY', 0),
+    ],
+
 ];

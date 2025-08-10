@@ -1,10 +1,29 @@
 services:
+  nginx:
+    container_name: web
+    image: nginx:mainline-alpine
+    ports:
+      - 443:443
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/ssl:/etc/certs
+    depends_on:
+      - api
+    links:
+      - api
   api:
     container_name: api
-    build: .
+    build:
+      target: api-local
     env_file: .env.docker
-    ports:
-      - "8080:8080"
+    volumes:
+      - ./app:/opt/webapp/app
+      - ./bootstrap:/opt/webapp/bootstrap
+      - ./public:/opt/webapp/public
+      - ./routes:/opt/webapp/routes
+      - ./storage:/opt/webapp/storage
+      - ./resources:/opt/webapp/resources
+      - ./.env.docker:/opt/webapp/.env
   mysql:
     container_name: db
     image: 'mysql:8.4'
@@ -15,6 +34,6 @@ services:
       - '3306:3306'
   redis:
     container_name: cache
-    image: 'redis:8.0-alpine'
+    image: 'valkey/valkey:8.1-alpine'
     ports:
       - '6379:6379'

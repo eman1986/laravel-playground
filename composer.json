@@ -10,20 +10,28 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-redis": "*",
+        "ext-uuid": "*",
+        "ext-zip": "*",
         "laravel/framework": "^12.21.0",
         "laravel/octane": "^2.12",
         "laravel/tinker": "^2.10.1",
-        "lcobucci/clock": "^3.3",
-        "lcobucci/jwt": "^5.5",
-        "nesbot/carbon": "^3.10"
+        "nesbot/carbon": "^3.10",
+        "openswoole/core": "^22.2",
+        "php-open-source-saver/jwt-auth": "^2.8",
+        "symfony/mailgun-mailer": "^7.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.24.1",
+        "larastan/larastan": "^3.6",
         "laravel/pail": "^1.2.3",
         "laravel/pint": "^1.24.0",
         "laravel/telescope": "^5.10",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.2",
+        "openswoole/ide-helper": "^22.1",
         "pestphp/pest": "^3.8.2",
         "pestphp/pest-plugin-laravel": "^3.2"
     },
@@ -39,7 +47,21 @@
             "Tests\\": "tests/"
         }
     },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-intl-grapheme": "*",
+        "symfony/polyfill-intl-idn": "*",
+        "symfony/polyfill-intl-normalizer": "*",
+        "symfony/polyfill-mbstring": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php83": "*",
+        "symfony/polyfill-php84": "*",
+        "symfony/polyfill-uuid": "*"
+    },
     "scripts": {
+        "check-style": "pint --test",
+        "fix-style": "pint",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

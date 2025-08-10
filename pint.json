@@ -1,0 +1,13 @@
+{
+  "preset": "laravel",
+  "cache-file": "storage/pint.cache",
+  "rules": {
+    "binary_operator_spaces": false,
+    "no_alias_functions": false,
+    "no_superfluous_phpdoc_tags": false,
+    "no_unreachable_default_argument_value": false,
+    "not_operator_with_successor_space": false,
+    "single_space_around_construct": false,
+    "type_declaration_spaces": false
+  }
+}
