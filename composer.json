@@ -18,9 +18,10 @@
         "laravel/framework": "^12.21.0",
         "laravel/octane": "^2.12",
         "laravel/tinker": "^2.10.1",
+        "lcobucci/clock": "^3.3",
+        "lcobucci/jwt": "^5.5",
         "nesbot/carbon": "^3.10",
         "openswoole/core": "^22.2",
-        "php-open-source-saver/jwt-auth": "^2.8",
         "symfony/mailgun-mailer": "^7.3"
     },
     "require-dev": {
