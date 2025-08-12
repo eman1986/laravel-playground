@@ -21,7 +21,6 @@
         "lcobucci/clock": "^3.3",
         "lcobucci/jwt": "^5.5",
         "nesbot/carbon": "^3.10",
-        "openswoole/core": "^22.2",
         "symfony/mailgun-mailer": "^7.3"
     },
     "require-dev": {
@@ -32,7 +31,6 @@
         "laravel/telescope": "^5.10",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.2",
-        "openswoole/ide-helper": "^22.1",
         "pestphp/pest": "^3.8.2",
         "pestphp/pest-plugin-laravel": "^3.2"
     },
